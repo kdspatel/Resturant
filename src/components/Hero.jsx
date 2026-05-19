@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   const ref = useRef(null);
@@ -35,7 +34,7 @@ const Hero = () => {
             </span>
 
             <h1 className="text-7xl lg:text-[7.5rem] leading-[0.85] font-light italic -ml-1 text-dark">
-              Ethereal <br />{" "}
+              Ethereal <br />
               <span className="not-italic">Dining</span>
             </h1>
           </div>
@@ -46,14 +45,23 @@ const Hero = () => {
             passion.
           </p>
 
-          <div className="flex items-center gap-6 group cursor-pointer w-fit">
-            <div className="w-14 h-14 rounded-full border border-dark flex items-center justify-center transition-all group-hover:bg-dark group-hover:text-paper">
-              <span className="text-2xl">→</span>
+          {/* RATING BADGE (REPLACED CTA) */}
+          <div className="flex items-center gap-4 w-fit">
+
+            <div className="flex items-center gap-3 px-5 py-3 border border-dark/20 rounded-full bg-white/50 backdrop-blur-md">
+
+              {/* Stars */}
+              <div className="text-gold text-sm tracking-widest">
+                ★★★★☆
+              </div>
+
+              {/* Text */}
+              <span className="text-[11px] uppercase tracking-widest font-bold text-dark">
+                4.8 Rating • 1.2k Reviews
+              </span>
+
             </div>
 
-            <span className="text-[11px] uppercase tracking-widest font-bold">
-              View Tasting Menu
-            </span>
           </div>
         </motion.div>
 
@@ -74,56 +82,6 @@ const Hero = () => {
             />
           </motion.div>
 
-          {/* Floating Highlight Box */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 1 }}
-            className="absolute -left-6 md:left-4 top-1/4 z-20"
-          >
-            <div className="bg-white p-6 shadow-2xl rounded-sm max-w-[220px] border-t-4 border-gold">
-              
-              <div className="text-[10px] uppercase tracking-widest mb-2 opacity-60">
-                Chef's Special
-              </div>
-
-              <div className="text-xl leading-tight italic mb-4 text-dark font-serif">
-                Paneer Tikka with Mint Chutney
-              </div>
-
-              <div className="w-full h-[1px] bg-dark/10 mb-2"></div>
-
-              <div className="text-[9px] uppercase tracking-widest font-medium">
-                Chef Name
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Rotating Text Circle */}
-          <div className="absolute -bottom-12 -right-6 md:right-12 z-20">
-            <div className="w-36 md:w-52 h-36 md:h-52 rounded-full border border-dashed border-gold flex items-center justify-center animate-spin-slow">
-              
-              <svg
-                viewBox="0 0 100 100"
-                className="w-28 md:w-40 h-28 md:h-40 fill-gold opacity-50"
-              >
-                <path
-                  id="textPath"
-                  d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                  fill="none"
-                />
-
-                <text
-                  fontSize="8"
-                  className="uppercase tracking-[0.2em] font-sans"
-                >
-                  <textPath href="#textPath">
-                    AUTHENTIC • SEASONAL • LOCAL • CRAFTED •{" "}
-                  </textPath>
-                </text>
-              </svg>
-            </div>
-          </div>
         </div>
       </div>
     </header>
