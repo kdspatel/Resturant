@@ -20,8 +20,9 @@ const Hero = () => {
       {/* Asymmetric Background */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-accent -z-10" />
 
-      <div className="max-w-[1500px] mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-14 items-center w-full relative z-10">
-        
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 md:grid-cols-12 gap-14 items-center w-full relative z-10">
+
+        {/* LEFT SIDE */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -33,7 +34,7 @@ const Hero = () => {
               Taste the excellence
             </span>
 
-            <h1 className="text-7xl lg:text-[7.5rem] leading-[0.85] font-light italic -ml-1 text-dark">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[7.5rem] leading-[0.85] font-light italic -ml-1 text-dark">
               Ethereal <br />
               <span className="not-italic">Dining</span>
             </h1>
@@ -45,44 +46,41 @@ const Hero = () => {
             passion.
           </p>
 
-          {/* RATING BADGE (REPLACED CTA) */}
+          {/* RATING BADGE */}
           <div className="flex items-center gap-6 w-fit">
-
             <div className="flex items-center gap-3 px-5 py-3 border border-dark/20 rounded-full bg-white/50 backdrop-blur-md">
 
-              {/* Stars */}
               <div className="text-gold text-sm tracking-widest">
                 ★★★★☆
               </div>
 
-              {/* Rating text */}
               <span className="text-[11px] uppercase tracking-widest font-bold text-dark">
                 4.8 Rating • 1.2k Reviews
               </span>
 
             </div>
-
           </div>
         </motion.div>
 
+        {/* RIGHT SIDE */}
         <div className="col-span-1 md:col-span-7 relative flex justify-center items-center h-full sm:pt-0 pt-20">
-          
+
           <motion.div
             style={{ y, rotate }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5 }}
-            className="w-[340px] md:w-[520px] aspect-[3/4] bg-gold rounded-full overflow-hidden border-[16px] border-white shadow-2xl relative"
+            className="w-[300px] sm:w-[420px] md:w-[520px] aspect-[3/4] bg-gold rounded-full overflow-hidden border-[16px] border-white shadow-2xl relative"
           >
             <img
               src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1024"
               alt="Artistic Gastronomy"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-110"
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
               referrerPolicy="no-referrer"
             />
           </motion.div>
 
-          {/* Floating Highlight Box */}
+          {/* FLOATING BOX */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,7 +88,7 @@ const Hero = () => {
             className="absolute -left-6 md:left-4 top-1/4 z-20"
           >
             <div className="bg-white p-6 shadow-2xl rounded-sm max-w-[220px] border-t-4 border-gold">
-              
+
               <div className="text-[10px] uppercase tracking-widest mb-2 opacity-60">
                 Chef's Special
               </div>
@@ -107,10 +105,10 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Rotating Text Circle */}
+          {/* ROTATING CIRCLE */}
           <div className="absolute -bottom-12 -right-6 md:right-12 z-20">
             <div className="w-36 md:w-52 h-36 md:h-52 rounded-full border border-dashed border-gold flex items-center justify-center animate-spin-slow">
-              
+
               <svg
                 viewBox="0 0 100 100"
                 className="w-28 md:w-40 h-28 md:h-40 fill-gold opacity-50"
@@ -123,10 +121,11 @@ const Hero = () => {
 
                 <text fontSize="8" className="uppercase tracking-[0.2em] font-sans">
                   <textPath href="#textPath">
-                    AUTHENTIC • SEASONAL • LOCAL • CRAFTED •{" "}
+                    AUTHENTIC • SEASONAL • LOCAL • CRAFTED •
                   </textPath>
                 </text>
               </svg>
+
             </div>
           </div>
 
