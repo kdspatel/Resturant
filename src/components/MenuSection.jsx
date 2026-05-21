@@ -172,40 +172,34 @@ export default function MenuSection() {
 
   return (
     <>
-      {/* High-End Design Studio Fonts */}
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
 
-      <section id="menu" className="w-full min-h-screen bg-white font-['Plus_Jakarta_Sans'] text-[#1c1b18] py-20 lg:py-32 overflow-hidden relative selection:bg-neutral-900 selection:text-white">
-        
-        {/* Decorative Grid Line System for Studio Vibe */}
-        {/* <div className="absolute inset-0 flex justify-between pointer-events-none max-w-7xl mx-auto px-6 opacity-[0.03]">
-          <div className="w-[1px] h-full bg-neutral-900" />
-          <div className="w-[1px] h-full bg-neutral-900 hidden md:block" />
-          <div className="w-[1px] h-full bg-neutral-900" />
-        </div> */}
+      <section id="menu" className="w-full min-h-screen bg-white font-['Plus_Jakarta_Sans'] text-[#1c1b18] py-16 sm:py-20 lg:py-32 overflow-hidden relative selection:bg-neutral-900 selection:text-white">
 
-        <div className="max-w-[1280px] mx-auto px-6 relative z-10">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 relative z-10">
           
-          {/* ================= DYNAMIC TEXT LINK HEADER ================= */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20 border-b border-neutral-200/60 pb-8">
-            <div>
-              <span className="text-[10px] uppercase font-extrabold tracking-[0.4em] text-neutral-400 block mb-3">
+          {/* HEADER */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 sm:mb-20 border-b border-neutral-200/60 pb-8">
+            
+            <div className="text-center lg:text-left">
+              <span className="text-[9px] sm:text-[10px] uppercase font-extrabold tracking-[0.3em] sm:tracking-[0.4em] text-neutral-400 block mb-3">
                 Fine Dining Canvas / 2026
               </span>
-              <h2 className="text-5xl md:text-7xl font-normal font-['Playfair_Display'] tracking-tight text-neutral-900 leading-none">
+
+              <h2 className="text-[3rem] sm:text-5xl md:text-7xl font-normal font-['Playfair_Display'] tracking-tight text-neutral-900 leading-none">
                 Special <span className="italic text-neutral-400">Menu</span>
               </h2>
             </div>
 
-            {/* Premium Category Capsule Bars */}
-            <div className="flex flex-wrap gap-4">
+            {/* CATEGORY BUTTONS */}
+            <div className="flex flex-wrap justify-center lg:justify-end gap-3 sm:gap-4">
               {categories.map((cat) => {
                 const isCatActive = activeCategory === cat;
                 return (
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-6 py-2 rounded-full text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 ${
+                    className={`px-5 sm:px-6 py-2 rounded-full text-[10px] sm:text-[11px] font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-300 ${
                       isCatActive
                         ? 'bg-neutral-900 text-white shadow-xl shadow-neutral-900/10'
                         : 'bg-white/80 text-neutral-400 hover:text-neutral-800 backdrop-blur-sm'
@@ -218,12 +212,14 @@ export default function MenuSection() {
             </div>
           </div>
 
-          {/* ================= DUAL SPLIT GRAPHIC WORKBENCH ================= */}
+          {/* MAIN GRID */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             
-            {/* Left Frame Element: Arched Editorial Image Frame */}
+            {/* LEFT IMAGE */}
             <div className="col-span-1 lg:col-span-5 flex flex-col items-center lg:items-start">
-              <div className="w-full max-w-[380px] h-[480px] sm:h-[560px] rounded-t-full overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.30)] bg-white p-3 border border-neutral-200/90 relative group">
+              
+              <div className="w-full max-w-[280px] sm:max-w-[380px] h-[380px] sm:h-[560px] rounded-t-full overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.30)] bg-white p-2 sm:p-3 border border-neutral-200/90 relative group">
+                
                 <div className="w-full h-full rounded-t-full overflow-hidden bg-neutral-100">
                   <img 
                     src={selectedItem.img} 
@@ -231,21 +227,24 @@ export default function MenuSection() {
                     className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
+
               </div>
             </div>
 
-            {/* Right Frame Element: Fine Line Content & Floating Pickers */}
+            {/* RIGHT CONTENT */}
             <div className="col-span-1 lg:col-span-7 flex flex-col justify-between min-h-[480px]">
               
-              {/* Highlight Presentation Plate Block */}
-              <div className="mb-12">
-                <div className="flex items-baseline mb-4">
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal font-['Playfair_Display'] tracking-wide text-neutral-900">
+              {/* TITLE */}
+              <div className="mb-10 sm:mb-12">
+                
+                <div className="flex items-center mb-4 gap-3">
+                  <h1 className="text-2xl sm:text-4xl lg:text-5xl font-normal font-['Playfair_Display'] tracking-wide text-neutral-900">
                     {selectedItem.name}
                   </h1>
-                  {/* Premium Dotted Connecting Spacer Line */}
-                  <div className="flex-1 border-b border-dashed border-neutral-300 mx-4" />
-                  <span className="text-2xl sm:text-3xl font-light font-['Playfair_Display'] text-neutral-800">
+
+                  <div className="flex-1 border-b border-dashed border-neutral-300 hidden sm:block" />
+
+                  <span className="text-xl sm:text-3xl font-light font-['Playfair_Display'] text-neutral-800 whitespace-nowrap">
                     ₹{selectedItem.price}
                   </span>
                 </div>
@@ -256,29 +255,32 @@ export default function MenuSection() {
 
                 <div className="inline-flex items-center gap-3 bg-white px-4 py-2 rounded-xl border border-neutral-200/50 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
+
+                  <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-neutral-400">
                     Fresh Artisanal Crafting
                   </span>
                 </div>
               </div>
 
-              {/* ================= UNIQUE BUBBLE INTERACTIVE SELECTOR ================= */}
+              {/* SELECTOR */}
               <div>
-                <span className="text-[10px] uppercase font-extrabold tracking-[0.3em] text-neutral-400 block mb-6">
+                <span className="text-[9px] sm:text-[10px] uppercase font-extrabold tracking-[0.25em] sm:tracking-[0.3em] text-neutral-400 block mb-6">
                   Select Plate Options
                 </span>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
+                  
                   {foodData[activeCategory].slice(0, 3).map((item, idx) => {
                     const isCurrent = selectedItem.name === item.name;
+
                     return (
                       <div
                         key={idx}
                         onClick={() => setSelectedItem(item)}
                         className="group flex items-center gap-4 cursor-pointer select-none"
                       >
-                        {/* Rounded Organic Framed Thumbnail */}
-                        <div className={`w-16 h-16 rounded-full overflow-hidden flex-shrink-0 transition-all duration-500 border-2 p-0.5 ${
+                        
+                        <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0 transition-all duration-500 border-2 p-0.5 ${
                           isCurrent 
                             ? 'border-neutral-900 scale-110 shadow-md' 
                             : 'border-transparent group-hover:border-neutral-300'
@@ -286,24 +288,26 @@ export default function MenuSection() {
                           <img src={item.img} alt={item.name} className="w-full h-full object-cover rounded-full" />
                         </div>
 
-                        {/* Inline Micro Labels */}
                         <div>
-                          <h4 className={`text-xs font-bold tracking-tight line-clamp-1 transition-colors ${
+                          <h4 className={`text-xs sm:text-sm font-bold tracking-tight line-clamp-1 transition-colors ${
                             isCurrent ? 'text-neutral-900 font-extrabold' : 'text-neutral-400 group-hover:text-neutral-700'
                           }`}>
                             {item.name}
                           </h4>
+
                           <p className="text-[10px] font-mono font-medium text-neutral-400 mt-0.5">
                             ₹{item.price}
                           </p>
                         </div>
+
                       </div>
                     );
                   })}
                 </div>
 
-                {/* Progress Tracking Aesthetic Hairline */}
-                <div className="w-full bg-neutral-200/60 h-[2px] mt-12 relative rounded-full">
+                {/* PROGRESS BAR */}
+                <div className="w-full bg-neutral-200/60 h-[2px] mt-10 sm:mt-12 relative rounded-full">
+                  
                   <div 
                     className="absolute h-full bg-neutral-900 transition-all duration-500 rounded-full"
                     style={{ 
@@ -311,6 +315,7 @@ export default function MenuSection() {
                       left: `${foodData[activeCategory].slice(0, 3).findIndex(i => i.name === selectedItem.name) * 33.33}%` 
                     }}
                   />
+
                 </div>
 
               </div>
